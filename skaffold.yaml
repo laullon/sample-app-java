@@ -1,0 +1,25 @@
+apiVersion: skaffold/v2beta1
+kind: Config
+metadata:
+  name: app-java
+build:
+  artifacts:
+  - image: printing
+    context: printing
+  - image: shopping
+    context: shopping
+  - image: styling
+    context: styling
+  - image: packaging
+    context: packaging
+  - image: delivery
+    context: delivery
+deploy:
+  kubectl:
+    manifests:
+    - namespace.yaml
+    - printing/printing_k8s.yaml
+    - shopping/shopping_k8s.yaml
+    - styling/styling_k8s.yaml
+    - packaging/packaging_k8s.yaml
+    - delivery/delivery_k8s.yaml

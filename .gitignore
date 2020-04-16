@@ -9,3 +9,8 @@ shopping/src/main/resources
 
 .DS_Store
 *dependency-reduced-pom.xml
+
+.classpath
+org.eclipse.*.prefs
+.project
+.factorypath

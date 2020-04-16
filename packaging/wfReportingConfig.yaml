@@ -1,0 +1,13 @@
+# reportingMechanism: direct
+# server: https://nimba.wavefront.com
+# token: 33a0e409-8851-4574-b5c8-09833d90457c
+# reportTraces: true
+
+# Template of Reporting via Wavefront Proxy
+reportingMechanism: proxy
+proxyHost: wavefront-proxy.default.svc.cluster.local
+proxyMetricsPort: 2878
+proxyDistributionsPort: 2878
+proxyTracingPort: 30000
+reportTraces: true
+ 

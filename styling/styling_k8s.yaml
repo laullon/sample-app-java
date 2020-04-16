@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: styling-deployment
+  namespace: beachshirts
+  labels:
+    app: styling
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: styling
+  template:
+    metadata:
+      labels:
+        app: styling
+    spec:
+      containers:
+      - name: styling
+        image: styling
+        ports:
+          - containerPort: 50051
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: styling-service
+  namespace: beachshirts
+  labels:
+    app: styling
+spec:
+  ports:
+  - name: styling
+    port: 50051
+    protocol: TCP
+  selector:
+    app: styling
+            
